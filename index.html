@@ -4,111 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-      <link rel="stylesheet" href="css/style.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- O container foi colocado para centralizar a tabela 
-   e o my-5 para espaçar do topo -->
-    <div class="container my-5">
-         <!-- A classe table foi colocada para aproveitar as propriedades do bootsrap -->
-      <!-- table-bordered foi colocado para criar as linhas entre as colunas -->
-       <!-- border-black para deixar preto as linhas -->
-      <!-- text-center para centralizar o conteúdo -->
-      <table class="table table-bordered border-black text-center">
-        <thead class="ControlandoCor ControlandoTamanho">
-          <tr>
-            <th scope="col">ORIGEM</th>
-            <th scope="col">DESTINO</th>
-            <th scope="col">R$ POR MINUTO</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>011</td>
-            <td>016</td>
-            <td>1.90</td>
-          </tr>
-          <tr>
-            <td>016</td>
-            <td>011</td>
-            <td>2.90</td>
-          </tr>
-          <tr>
-            <td>011</td>
-            <td>017</td>
-            <td>1.70</td>
-          </tr>
-          <tr>
-            <td>017</td>
-            <td>011</td>
-            <td>2.70</td>
-          </tr>
-          <tr>
-            <td>011</td>
-            <td>018</td>
-            <td>0.90</td>
-          </tr>
-          <tr>
-            <td>018</td>
-            <td>011</td>
-            <td>1.90</td>
-          </tr>
-      
-        </tbody>
-      </table>
-   
-    <table class="table table-bordered border-black text-center">
-        <thead class="ControlandoCor ControlandoTamanho">
-          <tr>
-            <th scope="col">ORIGEM</th>
-            <th scope="col">DESTINO</th>
-            <th scope="col">TEMPO</th>
-            <th scope="col">PLANO FALEMAIS</th>
-            <th scope="col">COM FALEMAIS</th>
-            <th scope="col">SEM FALEMAIS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>011</td>
-            <td>016</td>
-            <td>20</td>
-            <td>FeleMais 30</td>
-            <td id="primeiraComFalemais"></td>
-            <td id= "primeiraSemFalemais"></td>
-          </tr>
-          <tr>
-            <td>011</td>
-            <td>017</td>
-            <td>80</td>
-            <td>FaleMais 60</td>
-            <td id="segundoComFalemais"></td>
-            <td id="segundoSemFalemais"></td>
-        </tr>
-        <tr>
-          <td>018</td>
-          <td>011</td>
-          <td>200</td>
-          <td>FaleMais120</td>
-          <td id="terceiroComFalemais"></td>
-          <td id="terceiroSemFalemais"></td>
-      </tr>
-      <tr>
-        <td>018</td>
-        <td>017</td>
-        <td>100</td>
-        <td>FeleMais 30</td>
-        <td  id="quartoComFalemais"></td>
-        <td id="quartoSemFalemais"></td>
-    </tr>
-          <tr>
-        </tbody>
-      </table>
-    </div>
-    
-    <script src="./js/formatarMoeda.js"></script>
-    <script src="./js/forms.js"></script>
+    <div class="container">
 
+        <div class="my-4">
+
+            <table class="table table-bordered border-black text-center">
+                <thead class="ControlandoCor">
+                  <tr>
+                    <th scope="col">ORIGEM</th>
+                    <th scope="col">DESTINO</th>
+                    <th scope="col">R$ POR MINUTO</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>011</td>
+                    <td>016</td>
+                    <td>1.90</td>
+                  </tr>
+                  <tr>
+                    <td>016</td>
+                    <td>011</td>
+                    <td>2.90</td>
+                  </tr>
+                  <tr>
+                    <td>011</td>
+                    <td>017</td>
+                    <td>1.70</td>
+                  </tr>
+                  <tr>
+                    <td>017</td>
+                    <td>011</td>
+                    <td>2.70</td>
+                  </tr>
+                  <tr>
+                    <td>011</td>
+                    <td>018</td>
+                    <td>0.90</td>
+                  </tr>
+                  <tr>
+                    <td>018</td>
+                    <td>011</td>
+                    <td>1.90</td>
+                  </tr>
+              
+                </tbody>
+              </table>
+
+    <table class="table table-bordered border-black text-center my-5">
+        <thead class="ControlandoCor">
+          <tr>
+            <th>ORIGEM</th>
+            <th>DESTINO</th>
+            <th>PLANO FALEMAIS</th>
+            <th>TEMPO</th>
+            <th>COM FALEMAIS</th>
+            <th>SEM FALEMAIS</th>
+          </tr>
+        </thead>
+        <tbody id="historico">
+        
+        </tbody>
+      </table>
+  </div>
+
+    <form id="dados" name="dados" method="post" action="">
+        <div class="row my-3">
+
+  
+          <div class="col-md-4 my-3 controle">
+              <label for="origem" class="form-label">DDD de origem:</label>
+              <select name="origem" id="origem" class="form-select">
+                  <option value="0" disabled selected>Selecione o DDD de origem</option>
+                  <option value="011">011</option>
+                  <option value="016">016</option>
+                  <option value="017">017</option>
+                  <option value="018">018</option>
+              </select>
+          </div>
+      
+        
+          <div class="col-md-4 my-3 controle">
+              <label for="destino" class="form-label">DDD de destino:</label>
+              <select name="destino" id="destino" class="form-select">
+                  <option value="0" disabled selected>Selecione o DDD de destino</option>
+                  <option value="011">011</option>
+                  <option value="016">016</option>
+                  <option value="017">017</option>
+                  <option value="018">018</option>
+              </select>
+          </div>
+      
+          <div class="col-md-4 my-3 controle">
+              <label for="plano" class="form-label">Plano:</label>
+              <select name="plano" id="plano" class="form-select">
+                  <option value="0" disabled selected>Selecione o plano</option>
+                  <option value="FaleMais30">FaleMais30</option>
+                  <option value="FaleMais60">FaleMais60</option>
+                  <option value="FaleMais120">FaleMais120</option>
+              </select>
+          </div>
+      
+          <div class="col-md-4 my-3 controle">
+              <label for="minuto" class="form-label">Minutos de ligação:</label>
+              <input type="minuto" id="minuto" name="minuto"
+              required class="form-control" 
+              placeholder="Ex: 3">
+          </div>
+           <div class="col-auto my-5">
+              <button type="submit" class="btn btn-primary">Calcular preços:</button>
+            </div>
+      </div>
+      
+         </form>
+ </div>
+
+        <h1 id="ola"></h1>
+
+    
+
+    <script src="./js/forms.js"></script>
+    <script src="./js/formatarMoeda.js"></script>
 </body>
 </html>
